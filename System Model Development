@@ -1,0 +1,9 @@
+System: Simple Course Planning Tool
+
+Subsystem 1: Student Info Interface - Parses & Extracts data from file & breaks down pdf into graph/tree/etc. 
+
+Subsystem 2: File Reader
+
+Subsytem 3: Processor/Schedule Generator. 
+
+Subsystem 4: Display Schedule
