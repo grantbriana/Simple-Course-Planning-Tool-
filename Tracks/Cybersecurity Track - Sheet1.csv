@@ -1,0 +1,51 @@
+Course,Description ,Hours,Spring,Fall,Summer
+CPSC 1301K,Computer Science I,4,,,
+CYBR 2159,Fundamentals of Computer Networking,3,TRUE,TRUE,FALSE
+CPSC 1302,Computer Science 2,3,TRUE,TRUE,TRUE
+CYBR 2160,Intro to Information Security,3,TRUE,TRUE,TRUE
+AREA C,Humanities Elective,3,,,
+AREA D,Science Elective with Lab,4,,,
+CYBR 3128,Cybersecurity Management,3,TRUE,FALSE,
+CPSC 3131,Database Systems I,3,TRUE,TRUE,FALSE
+STAT 1401,Elementary Statistics,3,TRUE,,
+"HIST 2111
+or HIST 2112","U. S. History to 1865
+or U. S. History since 1865",3,TRUE,,
+CYBR 3135,Infrastructure Security,3,TRUE,FALSE,
+"KINS 1106
+or PHED 1205","Lifetime Wellness
+or Concepts of Fitness",2,TRUE,,
+CYBR 3136,"Wireless, IoT and Mobile Security",3,,TRUE,
+CYBR 3126,Client / Server Security,3,,TRUE,
+Area H,Non-technical Cyber course (minimum grade of C),3,,TRUE,
+POLS 1101,American Government,3,,TRUE,
+AREA E,Social Sciences Elective (Behavioral Science),3,,TRUE,
+PEDS Elective,,1,,TRUE,
+CPSC 3165,CPSC 3165 - Professionalism in Computing (Fa Sp Su),3,TRUE,TRUE,TRUE
+MISM 4165,Project Management (minimum grade of C),3,TRUE,,
+AREA H,Non-technical Cyber course (minimum grade of C),3,TRUE,,
+CYBR 4145,Security for Web Applications & Social Networking (minimum grade of C),3,TRUE,,
+AREA E,Social Science Elective (World Culture),3,TRUE,,
+CYBR 4146,"Network, Virtualization & Cloud Communication Infrastructure (minimum grade of C)",3,,TRUE,
+ENGL 5195U,Technical and Scientific Writing (minimum grade of C),3,,TRUE,
+AREA H,Non-technical Cyber course (minimum grade of C),3,,TRUE,
+Area H,Elective (minimum grade of C),3,,TRUE,
+AREA I,General Electives,3,,TRUE,
+CYBR 4128,Penetration Testing and Countermeasures (minimum grade of C),3,TRUE,,
+CYBR 4416,Cybersecurity Practicum (minimum grade of C),1,TRUE,,
+CPSC 4000,Baccalaureate Survey,0,TRUE,,
+CYBR 4160,Applied Crypography,3,,FALSE,
+CYBR 4166,Intrusion Detection & Prevention,3,,FALSE,
+CPSC 4127* or 5127U*,Computer & Network Security,3,,FALSE,
+CYBR 3119,Fundamentals of Digital Forensics,3,,FALSE,
+MATH 2125,MATH 2125 - Intro to Discrete Math (Fa Sp Su),3,TRUE,TRUE,TRUE
+CPSC 2105,CPSC 2105 - Computer Organization (Fa Sp Su),3,TRUE,TRUE,TRUE
+CPSC 3125 ,CPSC 3125 - Operating Systems (Fa Sp --),3,TRUE,TRUE,FALSE
+CYBR 3108,Defensive Programming,3,,,
+CPSC 3175,CPSC 3175 - Object-Oriented Design (Fa Sp --),3,TRUE,TRUE,FALSE
+MATH 1113,Pre-Calculus,1,TRUE,TRUE,TRUE
+MATH 5125U,MATH 5125U - Discrete Math (Fa Sp Su),3,TRUE,TRUE,TRUE
+CPSC 2106,,,,,
+CPSC 2108,CPSC 2108 - Data Structures (Fa Sp Su),3,TRUE,TRUE,TRUE
+CYBR 3106,Cybersecurity Risk Management,,,,
+CPSC 4157,CPSC 4157 - Computer Networks (Fa -- Su),3,FALSE,TRUE,TRUE
