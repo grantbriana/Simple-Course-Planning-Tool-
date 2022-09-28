@@ -3,8 +3,8 @@ CPSC 1301K,Computer Science I,4,,,,N/A
 CYBR 2159,Fundamentals of Computer Networking,3,TRUE,TRUE,FALSE,CPSC 1301K
 CPSC 1302,Computer Science 2,3,TRUE,TRUE,TRUE,CPSC 1301K
 CYBR 2160,Intro to Information Security,3,TRUE,TRUE,TRUE,CYBR 2159
-AREA C,Humanities Elective,3,,
-AREA D,Science Elective with Lab,4,,,
+AREA C,Humanities Elective,3,,,,
+AREA D,Science Elective with Lab,4,,,,
 CYBR 3128,Cybersecurity Management,3,TRUE,FALSE,
 CPSC 3131,Database Systems I,3,TRUE,TRUE,FALSE
 STAT 1401,Elementary Statistics,3,TRUE,,
