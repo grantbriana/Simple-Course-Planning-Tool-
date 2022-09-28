@@ -32,8 +32,13 @@ submitButton.pack()
 #drop menu for selecting a path.
 pathMenu = tk.StringVar()
 pathMenu.set("Select your degree Path:")
-drop = tk.OptionMenu(root, pathMenu, "Software Systems", "Game Development", "Network Security")
+drop = tk.OptionMenu(root, pathMenu, "Software Systems", "Game Development", "Network Security", "Enterprise", "Education")
 drop.pack()
+
+#When software systems is clicked, schedule generator will generate utilize software systems.csv 
+#Input DegreeWorks path 
+
+
 
 root.mainloop()
 

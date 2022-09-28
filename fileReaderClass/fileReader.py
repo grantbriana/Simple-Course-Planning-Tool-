@@ -62,7 +62,6 @@ def populateCourseArray():
     with open("software systems track2.csv", 'r') as csvfile:
         datareader = csv.reader(csvfile)
 
-        #row[6] (prerequisites) iterated and added to prereq. list
         prereq = [] 
 
         for row in datareader:
