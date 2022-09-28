@@ -1,0 +1,25 @@
+,,Games Programming 
+Class,Full Name,Pre req
+CPSC 1301K,Computer Science I,N/A
+MATH 2125,Introduction to Discrete Mathematics,MATH 1113
+CPSC 1302,Computer Science II,CPSC 1301
+CPSC 2105,Computer Organization,"MATH 2125, CPSC 1301K"
+MATH 5125U,Discrete Mathematics,MATH 5125U
+CPSC 2108,Data Structures,"CPSC 1302, MATH 2125"
+CPSC 3175,Object-Oriented Design,CPSC 2108
+CYBR 2159,Fundamentals of Computer Networks,CPSC 1301K
+CPSC 3118,Graphical User Interface Development,CPSC 1302
+STAT 1401,Elementary Statistics,N/A
+CYBR 2160,Intro to Information Security,CYBR 2159
+CPSC 3125,Operating Systems ,"CPSC 2105, CPSC 2108"
+CPSC 4111,Game Programming I,"CPSC 3118, CPSC 3175"
+MATH 1131,Calculus with Analytic Geometry I,MATH 1113
+CPSC 3165,Professionalism in Computing,N/A
+CPSC 4112,Game Programming II,"CPSC 4111, CPSC 4113"
+CPSC 3131,Database Systems I,CPSC 1302
+CPSC 4175,Software Engineering,CPSC 4175
+CPSC 4145,Computer Graphics,CPSC 2108
+CPSC 4000,,
+MATH 1113,Pre-Calculus,MATH 1111
+CPSC 4185,Artificial Intelligence and Machine Learning,CPSC 2108
+CPSC 4176,Senior Software Engineering Project ,CPSC 4175
