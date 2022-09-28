@@ -28,6 +28,7 @@ class course:
         self.prereq = prereq
         #bool
         self.taken = taken
+
 #Created these functions to grab the information.
     def __str__(self): #----->This is a string. This will output all the info for a class. ex use / print(course[0])  or print(course[0].Name() for specific info
         return f'{self.name}, {self.description}, {self.hours}, {self.fall}, {self.spring}, {self.summer}, {self.prereq}, {self.taken}'
@@ -84,6 +85,7 @@ def getNeededClasses(track):
         #web development
         case 6:
             #df = pandas.read_csv(path)
+            
             print("no schedule available.")
 getNeededClasses(int(input("Enter track \n Options \n3 - Software Systems \n")))
 #-------------------------Schedule Constructor____________________________

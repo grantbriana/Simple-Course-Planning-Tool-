@@ -1,19 +1,18 @@
 # import student interface module & needed packages
-#1from sqlite3.dbapi2 import _SingleParamWindowAggregateClass
-import pandas
+from pickle import TRUE
 import csv
+import PyPDF2
 
 # Based on user track inputted, select relevant track courses
 path = "software systems.csv"
-track = input("Enter track")
 courses = []
 
 #each class a literal class with attributes course, descript., etc
 class course:
-    def __init__(self,name, description, hours, fall, spring, summer):
+    def __init__(self,name, description, hours, fall, spring, summer,taken):
         #string
         self.name = name
-        #string
+        #string]
         self.description = description
         #int
         self.hours = hours
@@ -25,34 +24,67 @@ class course:
         self.summer = summer
         #dict
         #self.prereq = prereq
+        self.taken = taken
 
+
+#stand-in function for student interface module
 def getNeededClasses():
+    track = input("Enter track")
     match track:
         #enterprise computing
         case 1:
-            df = pandas.read_csv(path)
+            track = "enterprise computing track.csv"
+            #populateCourseArray(track)
         #education
         case 2:
-            df = pandas.read_csv(path)
+            track = "education track.csv"
+            #populateCourseArray(track)
         #software systems
         case 3:
-            df = pandas.read_csv("software systems.csv")
-            track2 = "software systems.csv"
+            populateCourseArray()
         #cybersecurity
         case 4:
-            df = pandas.read_csv(path)
+            track = "cybersecurity track.csv"
+            #populateCourseArray(track)
+            #df = pandas.read_csv(path)
         #games programming
         case 5:
-            df = pandas.read_csv(path)
+            track = "games programming track.csv"
+            #populateCourseArray()
         #web development
         case 6:
-            df = pandas.read_csv(path)
+            track = "web development track.csv"
+            #populateCourseArray()
 
 #Creates course classes with proper attributes & appends to courses array for fast retrieval
 def populateCourseArray():
-    with open("software systems.csv", 'r') as csvfile:
+    #relevant spreadsheet opened
+    with open("software systems track2.csv", 'r') as csvfile:
         datareader = csv.reader(csvfile)
+
+        #row[6] (prerequisites) iterated and added to prereq. list
         prereq = [] 
+
         for row in datareader:
-            newCourse = course(row[0],row[1],row[2],row[3],row[4],row[5])
+            newCourse = course(row[0],row[1],row[2],row[3],row[4],row[5],row[6])
             courses.append(newCourse)
+
+populateCourseArray()
+
+
+#Keep track of taken classes & needed classes
+def getNeededClasses2():
+    pdfFileObj = open('Sample Input3.pdf', 'rb')
+    pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
+
+    pageObj = pdfReader.getPage(2)
+    text=(pageObj.extractText())
+
+    #parse user's file
+    for course in courses:
+        if course.description in text:
+            print(course.name)
+            course.taken = False
+
+getNeededClasses()
+getNeededClasses2()
