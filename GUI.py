@@ -1,5 +1,6 @@
 import tkinter as tk
 import os
+from tkinter import filedialog as fd
 #import Simple_Course_Planning_Tool
 
 #Setup Tkinter
@@ -25,20 +26,30 @@ canvas.create_window(250, 80, window = nameEntryLabel)
 nameInput = tk.Entry(root)
 canvas.create_window(250, 100, window = nameInput)
 
-#Button to submit input
-submitButton = tk.Button(root, text ="Submit", padx=10, pady = 4, fg ="white", bg ="blue", command = Submit)
+def degreeWorksPath():
+    filePath = tk.StringVar()
+    filename = fd.askopenfilename()
+    filePath.set(filename)
+
+#Button to submit input'
+degreeWorksButton = tk.Button(root, text ="DegreeWorks Path", padx=10, pady = 4, fg ="white", bg ="blue", command = degreeWorksPath)
+submitButton = tk.Button(root, text ="Submit", padx=15, pady = 9, fg ="white", bg ="blue", command = Submit)
 submitButton.pack()
+degreeWorksButton.pack()
+
 
 #drop menu for selecting a path.
 pathMenu = tk.StringVar()
-pathMenu.set("Select your degree Path:")
-drop = tk.OptionMenu(root, pathMenu, "Software Systems", "Game Development", "Network Security", "Enterprise", "Education")
+pathMenu.set("Select your degree track:")
+drop = tk.OptionMenu(root, pathMenu, "Software Systems", "Game Development", "Network Security")
 drop.pack()
 
-#When software systems is clicked, schedule generator will generate utilize software systems.csv 
-#Input DegreeWorks path 
+def degreeWorksPath():
+    filePath = tk.StringVar()
+    filename = fd.askopenfilename()
+    filePath.set(filename)
+    canvas.create_window(250, 120, window = filePath)
 
 
 
 root.mainloop()
-

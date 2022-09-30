@@ -1,7 +1,8 @@
 # import student interface module & needed packages
-from pickle import TRUE
 import csv
 import PyPDF2
+import GUI.py
+
 
 # Based on user track inputted, select relevant track courses
 path = "software systems.csv"
@@ -69,7 +70,6 @@ def populateCourseArray():
             courses.append(newCourse)
 
 populateCourseArray()
-
 
 #Keep track of taken classes & needed classes
 def getNeededClasses2():

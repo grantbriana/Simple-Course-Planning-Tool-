@@ -1,11 +1,12 @@
 # import student interface module & needed packages
-from pickle import TRUE
 import csv
 import PyPDF2
+import gui
 
-# Based on user track inputted, select relevant track courses
-path = "software systems.csv"
 courses = []
+
+#drop = gui.drop
+drop = gui.pathMenu.get()
 
 #each class a literal class with attributes course, descript., etc
 class course:
@@ -28,38 +29,37 @@ class course:
 
 
 #stand-in function for student interface module
-def getNeededClasses():
-    track = input("Enter track")
-    match track:
-        #enterprise computing
-        case 1:
-            track = "enterprise computing track.csv"
-            #populateCourseArray(track)
-        #education
-        case 2:
-            track = "education track.csv"
-            #populateCourseArray(track)
+def getUserTrack(drop):
+    match drop:
         #software systems
-        case 3:
-            populateCourseArray()
+        case "Software Systems":
+            course_requirements = "Tracks/Software Systems Track - Sheet1 (1).csv"
+            populateCourseArray(course_requirements)
+        #education
+        case "Game Development":
+            course_requirements = "Tracks/Education Track - Sheet1.csv"
+            populateCourseArray(course_requirements)
         #cybersecurity
-        case 4:
-            track = "cybersecurity track.csv"
-            #populateCourseArray(track)
-            #df = pandas.read_csv(path)
+        case "Network Security":
+            course_requirements = "Tracks/Cybersecurity Track - Sheet1.csv"
+            populateCourseArray(course_requirements)
         #games programming
-        case 5:
-            track = "games programming track.csv"
-            #populateCourseArray()
+        case "Game Development":
+            course_requirements = "Tracks/Games Programming Track - Sheet1 (1).csv"
+            populateCourseArray(course_requirements)
         #web development
-        case 6:
-            track = "web development track.csv"
-            #populateCourseArray()
+        case "Web Development":
+            course_requirements = "web development track.csv"
+            populateCourseArray(course_requirements)
+        #Enterprise
+        case "Enterprise":
+            course_requirements = "Tracks/Enterprise Computing Track - Sheet1.csv"
+            populateCourseArray(course_requirements)
 
 #Creates course classes with proper attributes & appends to courses array for fast retrieval
-def populateCourseArray():
+def populateCourseArray(track):
     #relevant spreadsheet opened
-    with open("software systems track2.csv", 'r') as csvfile:
+    with open(track, 'r') as csvfile:
         datareader = csv.reader(csvfile)
 
         #row[6] (prerequisites) iterated and added to prereq. list
@@ -70,20 +70,23 @@ def populateCourseArray():
             courses.append(newCourse)
 
 
-populateCourseArray()
-
-
 #Keep track of taken classes & needed classes
 def getNeededClasses():
-    pdfFileObj = open('Sample Input3.pdf', 'rb')
+    #from gui, retrieve user selected of DegreeWorks File Path 
+    degreeWorksPath = gui.filePath.get()
+    pdfFileObj = open(degreeWorksPath,'rb')
     pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
 
-    pageObj = pdfReader.getPage(2)
+    numPages = PyPDF2.PdfFileReader(pdfFileObj).numPages
+    #if course name discovered in user DegreeWorks file, mark as NOT taken
+    for i in range(numPages):
+        pageObj = pdfReader.getPage(i)
+        text=(pageObj.extractText())
+        
+        #parse user's file
+        for course in courses:
+            if course.name in text:
+                course.taken = False
 
-    text=(pageObj.extractText())
-
-    #parse user's file
-    for course in courses:
-        if course.description in text:
-            print(course.name)
-            course.taken = False
+getUserTrack(drop)
+getNeededClasses()
