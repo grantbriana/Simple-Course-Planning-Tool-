@@ -1,4 +1,4 @@
-import fileReader as fr
+iimport fileReader as fr
 
 tempArray = []
 courseArray = []
@@ -119,15 +119,19 @@ def season():
         return  "Fall"
 
 
-'''
+
 fr.getUserTrack(fr.drop)
 fr.getNeededClasses()
 #calls the function
 scheduleCreate()
-'''
 
+f = open("demofile.txt", "w")
 for course in courseArray:
     print("\n" + "Semester: " + str(k) + " " + season() + "\n")
+    f.write("\n" + "Semester: " + str(k) + " " + season() + "\n")
+
     k = k + 1
     for i in course:
         print(i)
+        f.write(str(i) + "\n")
+f.close()
