@@ -9,6 +9,7 @@ drop = gui.pathMenu.get()
 
 #each class a literal class with attributes course, descript., etc
 
+
 class course:
     def __init__(self, name, description, hours, fall, spring, summer, prereq, taken):
         # string
@@ -27,7 +28,6 @@ class course:
         self.prereq = str(prereq)
         # bool  
         self.taken = True if taken == "TRUE" else False   #getNeededFunction defines if taken or not
-
 
     # Created these functions to grab the information.
     def __str__(
@@ -68,23 +68,23 @@ def getUserTrack(drop):
             populateCourseArray(course_requirements)
         #education
         case "Game Development":
-            course_requirements = "Tracks/Education Track - Sheet1.csv"
+            course_requirements = "version 0.1\Tracks\Education Track - Sheet1.csv"
             populateCourseArray(course_requirements)
         #cybersecurity
         case "Network Security":
-            course_requirements = "Tracks/Cybersecurity Track - Sheet1.csv"
+            course_requirements = "version 0.1\Tracks\Cybersecurity Track - Sheet1.csv"
             populateCourseArray(course_requirements)
         #games programming
         case "Game Development":
-            course_requirements = "Tracks/Games Programming Track - Sheet1 (1).csv"
+            course_requirements = "version 0.1\Tracks\Games Programming Track - Sheet1 (1).csv"
             populateCourseArray(course_requirements)
         #web development
         case "Web Development":
-            course_requirements = "web development track.csv"
+            course_requirements = "version 0.1\web development track.csv"
             populateCourseArray(course_requirements)
         #Enterprise
         case "Enterprise":
-            course_requirements = "Tracks/Enterprise Computing Track - Sheet1.csv"
+            course_requirements = "version 0.1\Tracks\Enterprise Computing Track - Sheet1.csv"
             populateCourseArray(course_requirements)
 
 
@@ -105,7 +105,7 @@ def populateCourseArray(path):
 #Keep track of taken classes & needed classes
 def getNeededClasses():
     #from gui, retrieve user selected of DegreeWorks File Path 
-    degreeWorksPath = gui.filePath.get()
+    degreeWorksPath = "version 0.1\Sample Input3.pdf"
     pdfFileObj = open(degreeWorksPath,'rb')
     pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
 
@@ -114,8 +114,10 @@ def getNeededClasses():
     for i in range(numPages):
         pageObj = pdfReader.getPage(i)
         text=(pageObj.extractText())
-        
+        #print(text)
         #parse user's file
         for course in courses:
-            if course.name in text:
+            if course.name+"*" in text or course.name in text:
                 course.taken = False
+            else:
+                course.taken = True
