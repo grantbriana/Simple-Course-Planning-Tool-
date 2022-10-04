@@ -1,4 +1,4 @@
-iimport fileReader as fr
+import fileReader as fr
 
 tempArray = []
 courseArray = []
@@ -10,9 +10,12 @@ for i in fr.courses:
 
 #checks if courses prereq has been taken
 def prereqCheck(course):
+    #indicates no course prerequisite
     if course.prereq != "":
         istaken = False
+        #iterate thorugh courses list
         for course2 in fr.courses:
+            #if the course prerequisite is in the list and taken
             if (course.prereq == course2.name) and course2.taken == True:
                 istaken = True
         return istaken
@@ -120,6 +123,7 @@ def season():
 
 
 
+# Demo
 fr.getUserTrack(fr.drop)
 fr.getNeededClasses()
 #calls the function
@@ -135,3 +139,5 @@ for course in courseArray:
         print(i)
         f.write(str(i) + "\n")
 f.close()
+
+# https://github.com/grantbriana/Simple-Course-Planning-Tool-
