@@ -26,9 +26,7 @@ class course:
         # bool
         self.summer = True if summer == "TRUE" else False
         # dict
-        #self.prereq = str(prereq)
         self.prereq = prereq
-
         # bool  
         self.taken = True if taken == "TRUE" else False   #getNeededFunction defines if taken or not
 
@@ -70,16 +68,16 @@ def getUserTrack(drop):
             course_requirements = "version 0.2\Tracks\Software Systems Track.csv"
             populateCourseArray(course_requirements)
         #education
-        case "Game Development":
-            course_requirements = "version 0.2\Tracks\Education Track - Sheet1.csv"
+        case "Education":
+            course_requirements = "version 0.2\Tracks\Education Track.csv"
             populateCourseArray(course_requirements)
         #cybersecurity
         case "Network Security":
-            course_requirements = "version 0.2\Tracks\Cybersecurity Track - Sheet1.csv"
+            course_requirements = "version 0.2\Tracks\Cybersecurity Track.csv"
             populateCourseArray(course_requirements)
         #games programming
         case "Game Development":
-            course_requirements = "version 0.2\Tracks\Games Programming Track - Sheet1 (1).csv"
+            course_requirements = "version 0.2\Tracks\Games Programming Track.csv"
             populateCourseArray(course_requirements)
         #web development
         case "Web Development":
@@ -87,7 +85,10 @@ def getUserTrack(drop):
             populateCourseArray(course_requirements)
         #Enterprise
         case "Enterprise":
-            course_requirements = "version 0.2\Tracks\Enterprise Computing Track - Sheet1.csv"
+            course_requirements = "version 0.2\Tracks\Enterprise Computing Track.csv"
+            populateCourseArray(course_requirements)
+        case "Cybersecurity":
+            course_requirements = "version 0.2\Tracks\Cybersecurity Track.csv"
             populateCourseArray(course_requirements)
 
 
@@ -105,6 +106,7 @@ def populateCourseArray(path):
             newCourse = course(row[0],row[1],row[2],row[3],row[4],row[5],prereq,row[6])
             courses.append(newCourse)
 
+
 #Keep track of taken classes & needed classes
 def getNeededClasses():
     #from gui, retrieve user selected of DegreeWorks File Path 
@@ -117,11 +119,13 @@ def getNeededClasses():
     for i in range(numPages):
         pageObj = pdfReader.getPage(i)
         text=(pageObj.extractText())
-        #print(text)
         #parse user's file
         for course in courses:
-            if course.name+"*" in text or course.name in text or course.description in text:
-                #if course is found in Text, it is not Taken
-                notTaken.append(course.name)
+            if course.name+"*" in text or course.name in text:
+                #if course is found in Text, add to untaken list
+                notTaken.append(course.name)                
 
-    print(notTaken)
+    #if course name NOT discovered in user untaken list, mark as taken
+    for c in courses:
+        if c.name not in notTaken:
+            c.taken = True
