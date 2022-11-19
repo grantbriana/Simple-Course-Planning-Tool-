@@ -2,9 +2,6 @@ import networkx as nx
 import fileReader as fr 
 from matplotlib import pyplot as plt
 
-fr.populateCourseArray("version 0.2\Tracks\Software Systems Track.csv")
-fr.getNeededClasses()
-
 #Initialize Graph
 g = nx.DiGraph()
 #Breadth-First Graph Traversal: Explores graph level by level
@@ -13,7 +10,6 @@ queue = []
 path = []
 
 for course in fr.courses:    
-  #nodes = course.name   
   #Create graph edges for adjacency list
   for i in course.prereq: 
     g.add_edge(i,course.name)
@@ -28,11 +24,13 @@ def getCourseObj(courseName):
 
   return foundCourse
 
+
 level = {} #dict {level: node}
 
 for c in fr.courses:
   level[c.name] = -1
 level[''] = -1
+
 
 def bfs(visited, graph, node):
   visited.append(node)
@@ -50,9 +48,6 @@ def bfs(visited, graph, node):
         level[neighbour] = level[s] + 1
 
     
-
-#for i in level:
-  #print(i.name,": ", level[i])
 bfs(visited, g, '')
 path.remove('')
 unTakenPath = []
@@ -62,14 +57,11 @@ for p in path:
   if p in fr.notTaken:
     objpath.append(getCourseObj(p))
     unTakenPath.append(p)
-'''
-for i in level:
-  print(level[i],": ",i)
-'''
 
-print(unTakenPath)
+
 # ---- For testing purposes and schedule generation ----
 
+#Tests if course has met prereqs
 def prereqCheck(course):
   courseObj = getCourseObj(course)
   if(courseObj.prereq != [""]):
@@ -80,7 +72,7 @@ def prereqCheck(course):
         return False
   return True
 
-
+#Tests BFS
 def lessThan(course):
   flag = False
   courseObj = getCourseObj(course)
@@ -93,31 +85,100 @@ def lessThan(course):
           flag = True
   return flag
 
-tempArray = []
 
+#Checks if class in temporary array to avoid unmet prerequisite error
 def notListed(course,array):
   flag = False
-  for i in course.prereq:
-    if i in array:
-      flag = True
+  courseObj = getCourseObj(course)
+  if courseObj.prereq != [""]:
+    for i in courseObj.prereq:
+      if i in array:
+        flag = True
   return flag
 
+#CourseAray to hold all Semesters
+courseArray = []
+def schedule():
+  totalClasses = len(unTakenPath)
+  #Loop runs on condition that all classes have not been added to a semester (array)
+  while totalClasses != 0:
+    tempArray = []
+    #semester hours counter. 
+    j = 0
+    #Check if 15 array does not exceed 15 credit hours
+    if j < 15:
+      #Iterate through each class in BFS (level-traversal)path
+      for course in objpath:
+        #Check if class is available for season
+        if course.fall:
+          #check if class has been taken and not already in semester array
+          if course.taken == False:
+            if course not in tempArray: 
+              #check if course has prereqs or course has met all prereqs 
+              if prereqCheck(course.name):
+                #check if course has a prerequisite in semester array already
+                if notListed(course.name,tempArray) == False:
+                  tempArray.append(course.name)
+                  course.taken = True
+                  j += course.hours
+                  totalClasses -= 1
+    courseArray.append(tempArray)
+    if(totalClasses == 0):
+      break
 
-''' 
-j = 0
+    #Repeat for next semester
+    tempArray = []
+    j = 0
+    for course in objpath:
+      if j < 15:
+        if course.spring:
+          if course.taken == False:
+            if course not in tempArray:  
+              if prereqCheck(course.name):
+                if notListed(course.name,tempArray) == False:
+                  tempArray.append(course.name)
+                  course.taken = True
+                  j += course.hours
+                  totalClasses -= 1
+    courseArray.append(tempArray)
+    if(totalClasses == 0):
+      break
 
-for c in objpath:
-  #check if class available in spring
-    if c.spring:
-  #check if prereqs are fufilled, lower in the list, or empty
-      if (lessThan(c.name) or prereqCheck(c.name) == False and notListed(c,tempArray) == False):
-  #add to tempArray
-        tempArray.append(c)
-        j += c.hours
+    #Repeat for nest semester
+    tempArray = []
+    j = 0
+    for course in objpath:
+      if j < 15:
+        if course.summer:
+          if course.taken == False:
+            if course not in tempArray:  
+              if prereqCheck(course.name):
+                if notListed(course.name,tempArray) == False:
+                  tempArray.append(course.name)
+                  course.taken = True
+                  j += course.hours
+                  totalClasses -= 1
+    courseArray.append(tempArray)
+    if(totalClasses == 0):
+      break
 
 
-#increment hours
-for i in level:
-  if i in unTakenPath:
-    print(level[i]-1, ": ", i)
-'''
+schedule()
+for i in courseArray:
+  print(i)
+
+k = 1
+def season():
+    if k in (1, 4, 7):
+        return "Spring"
+    elif k in (2, 5, 8):
+        return  "Fall"
+    elif k in (3, 6, 9):
+        return  "Summer"
+
+for course in courseArray:
+  print("\n" + "Semester: " + str(k) + " " + season() + "\n")
+  k += 1
+  for i in course:
+    courseObj = getCourseObj(i)
+    print(i,":",courseObj.description," Credit Hours: ",courseObj.hours)

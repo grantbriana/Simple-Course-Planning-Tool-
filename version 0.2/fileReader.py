@@ -129,3 +129,6 @@ def getNeededClasses():
     for c in courses:
         if c.name not in notTaken:
             c.taken = True
+
+getUserTrack(drop)
+getNeededClasses()
