@@ -18,13 +18,13 @@ def schedule():
   #Loop runs on condition that all classes have not been added to a semester (array)
   while totalClasses != 0:
     tempArray = []
-    #semester hours counter. 
+    #semester hours counter.
     j = 0
     #Check if 15 array does not exceed 15 credit hours
-    if j < 12:
+    if j < 15:
       #Iterate through each class in BFS (level-traversal)path
       for course in dag.objpath:
-        #Check if class is available for season
+        #Check if  is available for season
         if course.fall:
           #check if class has been taken and not already in semester array
           if course.taken == False:
@@ -45,25 +45,7 @@ def schedule():
     tempArray = []
     j = 0
     for course in dag.objpath:
-      if j < 12:
-        if course.spring:
-          if course.taken == False:
-            if course not in tempArray:  
-              if dag.prereqCheck(course.name):
-                if notListed(course.name,tempArray) == False:
-                  tempArray.append(course.name)
-                  course.taken = True
-                  j += course.hours
-                  totalClasses -= 1
-    courseArray.append(tempArray)
-    if(totalClasses == 0):
-      break
-
-    #Repeat for nest semester
-    tempArray = []
-    j = 0
-    for course in dag.objpath:
-      if j < 12:
+      if j < 15:
         if course.summer:
           if course.taken == False:
             if course not in tempArray:  
@@ -74,6 +56,27 @@ def schedule():
                   j += course.hours
                   totalClasses -= 1
     courseArray.append(tempArray)
+    
+    if(totalClasses == 0):
+      break
+    
+
+    #Repeat for nest semester
+    tempArray = []
+    j = 0
+    for course in dag.objpath:
+      if j < 15:
+        if course.spring:
+          if course.taken == False:
+            if course not in tempArray:  
+              if dag.prereqCheck(course.name):
+                if notListed(course.name,tempArray) == False:
+                  tempArray.append(course.name)
+                  course.taken = True
+                  j += course.hours
+                  totalClasses -= 1
+    courseArray.append(tempArray)
+    
     if(totalClasses == 0):
       break
 
@@ -83,8 +86,9 @@ schedule()
 k = 1
 def season():
     if k in (1, 4, 7):
-        return "Fall"
+        return "Spring"
     elif k in (2, 5, 8):
-        return  "Spring"
-    elif k in (3, 6, 9):
         return  "Summer"
+    elif k in (3, 6, 9):
+        return  "Fall"
+

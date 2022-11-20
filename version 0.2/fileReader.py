@@ -7,7 +7,6 @@ courses = []
 notTaken = []
 
 drop = gui.pathMenu.get()
-
 #each class a literal class with attributes course, descript., etc
 
 
@@ -27,7 +26,7 @@ class course:
         self.summer = True if summer == "TRUE" else False
         # dict
         self.prereq = prereq
-        # bool  
+        # bool
         self.taken = True if taken == "TRUE" else False   #getNeededFunction defines if taken or not
 
     # Created these functions to grab the information.
@@ -109,9 +108,9 @@ def populateCourseArray(path):
 
 #Keep track of taken classes & needed classes
 def getNeededClasses():
-    #from gui, retrieve user selected of DegreeWorks File Path 
+    #from gui, retrieve user selected of DegreeWorks File Path
     degreeWorksPath = gui.filePath.get()
-    pdfFileObj = open(degreeWorksPath,'rb') 
+    pdfFileObj = open(degreeWorksPath,'rb')
     pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
 
     numPages = PyPDF2.PdfFileReader(pdfFileObj).numPages
@@ -123,7 +122,7 @@ def getNeededClasses():
         for course in courses:
             if course.name+"*" in text or course.name in text:
                 #if course is found in Text, add to untaken list
-                notTaken.append(course.name)                
+                notTaken.append(course.name)
 
     #if course name NOT discovered in user untaken list, mark as taken
     for c in courses:

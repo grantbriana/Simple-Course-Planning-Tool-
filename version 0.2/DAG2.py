@@ -1,6 +1,6 @@
 #Initializes Breadth-First Graph Traversal
 import networkx as nx
-import fileReader as fr 
+import fileReader as fr
 from matplotlib import pyplot as plt
 
 #Initialize Graph
@@ -10,9 +10,9 @@ visited = []
 queue = []
 path = []
 
-for course in fr.courses:    
+for course in fr.courses:
   #Create graph edges for adjacency list
-  for i in course.prereq: 
+  for i in course.prereq:
     g.add_edge(i,course.name)
 
 
@@ -39,7 +39,7 @@ def bfs(visited, graph, node):
   level[node] = 0
 
   while queue:
-    s = queue.pop(0) 
+    s = queue.pop(0)
     path.append(s)
 
     for neighbour in graph.neighbors(s):
@@ -48,7 +48,7 @@ def bfs(visited, graph, node):
         queue.append(neighbour)
         level[neighbour] = level[s] + 1
 
-    
+
 bfs(visited, g, '')
 path.remove('')
 unTakenPath = []
@@ -79,7 +79,7 @@ def lessThan(course):
   courseObj = getCourseObj(course)
   if(courseObj.prereq != [""]):
     #iterate through course prereqs
-    for i in courseObj.prereq:   
+    for i in courseObj.prereq:
       if i in unTakenPath:
         #if prereq after course
         if unTakenPath.index(i) > unTakenPath.index(course):
