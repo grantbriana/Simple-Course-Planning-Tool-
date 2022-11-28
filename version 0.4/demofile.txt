@@ -1,0 +1,27 @@
+
+Semester: 1 Spring
+MATH 1113, Pre-Calculus, 4, Fall,True,Spring, True, Summer,True, ['FALSE'], True
+
+Semester: 2 Summer
+CPSC 1301K, Computer Science I, 4, Fall,True,Spring, True, Summer,True, ['FALSE'], True
+
+Semester: 3 Fall
+CPSC 1302, Computer Science II, 3, Fall,True,Spring, True, Summer,True, ['FALSE'], True
+
+Semester: 4 Spring
+CPSC 2105, Computer Organization, 3, Fall,True,Spring, True, Summer,True, ['FALSE'], True
+
+Semester: 5 Summer
+CYBR 2160, Intro to Information Security, 3, Fall,True,Spring, True, Summer,True, ['FALSE'], True
+
+Semester: 6 Fall
+CYBR 2159, Fundamentals of Computer Networking, 3, Fall,True,Spring, True, Summer,False, ['FALSE'], True
+
+Semester: 7 Spring
+MATH 2125, Intro to Discrete Math, 3, Fall,True,Spring, True, Summer,True, ['FALSE'], True
+
+Semester: 8 Summer
+CPSC 2108, Data Structures, 3, Fall,True,Spring, True, Summer,True, ['FALSE'], True
+
+Semester: 9 Fall
+CPSC 3125, Operating Systems, 3, Fall,True,Spring, True, Summer,False, ['FALSE'], True
