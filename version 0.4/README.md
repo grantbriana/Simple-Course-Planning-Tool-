@@ -24,5 +24,9 @@ Academic advising takes a long time for both students and faculty, especially wh
 
 * The software should be implemented in Python and thus can be executed on Windows.
 
+### Authors
+* Author: Briana Grant
 
-
+### Known Bugs
+* Alpha version: Freezing after degreeWorks input
+* Beta version: Must input degreeWorks file (or error)
