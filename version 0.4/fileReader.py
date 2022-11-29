@@ -124,6 +124,7 @@ def getNeededClasses():
                 if course.name+"*" in text or course.name in text:
                     #if course is found in Text, add to untaken list
                     notTaken.append(course.name)
+        print("\n")
         #if course name NOT discovered in user untaken list, mark as taken
         for c in courses:
             if c.name not in notTaken:

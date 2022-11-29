@@ -58,7 +58,6 @@ def schedule():
               if dag.prereqCheck(course.name):
                 if notListed(course.name,tempArray) == False:
                   tempArray.append(course.name)
-                  print(course.name)
                   course.taken = True
                   j += course.hours
                   totalClasses -= 1
@@ -86,6 +85,7 @@ def schedule():
     
     if(totalClasses == 0):
       break
+    noCLasses = False
 
 schedule()
 

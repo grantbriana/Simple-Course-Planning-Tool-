@@ -6,10 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="9a12091a-e822-4be0-9d23-b1ceeb517e5f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracks/Cybersecurity Track.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Tracks/Cybersecurity Track.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracks/Education Track.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Tracks/Education Track.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracks/Enterprise Computing Track.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Tracks/Enterprise Computing Track.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracks/Games Programming Track.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Tracks/Games Programming Track.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAG2.py" beforeDir="false" afterPath="$PROJECT_DIR$/DAG2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI2.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tracks/Software Systems Track.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Tracks/Software Systems Track.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileReader.py" beforeDir="false" afterPath="$PROJECT_DIR$/fileReader.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scheduleGenerator2.py" beforeDir="false" afterPath="$PROJECT_DIR$/scheduleGenerator2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -173,15 +173,6 @@
     </option>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>1</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
         <watch expression="drop" />

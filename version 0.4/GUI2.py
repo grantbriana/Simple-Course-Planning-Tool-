@@ -12,6 +12,8 @@ PROJECT_PATH = pathlib.Path(__file__).parent
 PROJECT_UI =  "SCPToolUi/SCPToolUi2.ui"
 pathLine = ""
 desiredHours = 12
+degreeWorks = ""
+
 class NewprojectApp:
 
 
@@ -90,6 +92,8 @@ class NewprojectApp:
     def run(self):
         self.mainwindow.mainloop()
 
+
+
     def degreeWorksPath(self):
         filePath = tk.StringVar()
         filename = fd.askopenfilename()
@@ -103,7 +107,7 @@ class NewprojectApp:
 
     def Submit(self):
         path= self.trackCombo.get()
-        desiredHours = self.DesiredHours.get()
+        degreeWorks = self.DegreeWork.get()
         if not self.DegreeWork.get():
             res = tkinter.messagebox.askquestion(title='Degree Works File Not Found', message='You do not have a Degree Works selected. Do you wish to continue without a Degree Works file?')
             if res == 'yes':
@@ -121,5 +125,5 @@ app = NewprojectApp(root)
 app.trackCombo.bind("<<ComboboxSelected>>", app.trackCallBack(app.trackCombo.get()))
 app.trackCombo.bind("<<ComboboxSelected>>", lambda event:app.trackCallBack(app.trackCombo.get()))
 app.run()
-filePath = tk.StringVar
+app.filePath = tk.StringVar
 #ilePath.set(app.DegreeWork().get)

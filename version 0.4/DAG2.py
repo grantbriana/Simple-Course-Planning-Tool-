@@ -57,7 +57,9 @@ objpath = []
 for p in path:
   # if p in fr.notTaken:
   objpath.append(getCourseObj(p))
-  unTakenPath.append(p)
+  if getCourseObj(p).taken == False:
+    unTakenPath.append(p)
+    print(getCourseObj(p))
 
 
 # ---- For testing purposes and schedule generation ----
