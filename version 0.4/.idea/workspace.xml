@@ -4,16 +4,61 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a12091a-e822-4be0-9d23-b1ceeb517e5f" name="Changes" comment="" />
+    <list default="true" id="9a12091a-e822-4be0-9d23-b1ceeb517e5f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/version 0.2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/version 0.2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAG.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAG2.0.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI2.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCPToolUi/SCPToolUi.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCPToolUi2.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tracks/Enterprise Computing Track.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Tracks/Enterprise Computing Track.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tracks/Games Programming Track.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Tracks/Games Programming Track.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demofile.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileReader.py" beforeDir="false" afterPath="$PROJECT_DIR$/fileReader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduleCreateDag.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduleGenerator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduleGenerator2.py" beforeDir="false" afterPath="$PROJECT_DIR$/scheduleGenerator2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/version 0.2/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version 0.2/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version 0.2/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version 0.2/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version 0.2/.idea/version 0.2.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version 0.2/DAG.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version 0.2/DAG2.0.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version 0.2/GUI.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version 0.2/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version 0.2/Sample Input1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version 0.2/Sample Input3.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version 0.2/TestDAG1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version 0.2/TestDAG2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version 0.2/Tracks/Cybersecurity Track.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version 0.2/Tracks/Education Track.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version 0.2/Tracks/Enterprise Computing Track.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version 0.2/Tracks/Games Programming Track.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version 0.2/Tracks/Software Systems Track.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version 0.2/fileReader.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version 0.2/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version 0.2/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version 0.2/scheduleCreateDag.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version 0.2/scheduleGenerator.py" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2HdemZfrMCYT0hTnAczvFHeRHAR" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -23,7 +68,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.GUI">
+  <component name="RunManager" selected="Python.main">
     <configuration name="GUI" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="version 0.2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -37,6 +82,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GUI.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="GUI2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="version 0.2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GUI2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -110,8 +176,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.GUI" />
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.GUI2" />
+        <item itemvalue="Python.GUI" />
         <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.scheduleGenerator" />
       </list>
@@ -128,7 +195,27 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>1</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
         <watch expression="drop" />

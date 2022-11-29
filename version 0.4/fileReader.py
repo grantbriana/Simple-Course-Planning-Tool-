@@ -1,7 +1,7 @@
 # import student interface module & needed packages
 import csv
 import PyPDF2
-import GUI as gui
+import GUI2 as gui
 
 courses = []
 notTaken = []
@@ -65,30 +65,30 @@ def getUserTrack(drop):
     match drop:
         #software systems
         case "Software Systems":
-            course_requirements = "version 0.2\Tracks\Software Systems Track.csv"
+            course_requirements = "Tracks\Software Systems Track.csv"
             populateCourseArray(course_requirements)
         #education
         case "Education":
-            course_requirements = "version 0.2\Tracks\Education Track.csv"
+            course_requirements = "Tracks\Education Track.csv"
             populateCourseArray(course_requirements)
         #cybersecurity
         case "Network Security":
-            course_requirements = "version 0.2\Tracks\Cybersecurity Track.csv"
+            course_requirements = "Tracks\Cybersecurity Track.csv"
             populateCourseArray(course_requirements)
         #games programming
         case "Game Development":
-            course_requirements = "version 0.2\Tracks\Games Programming Track.csv"
+            course_requirements = "Tracks\Games Programming Track.csv"
             populateCourseArray(course_requirements)
         #web development
         case "Web Development":
-            course_requirements = "version 0.2\web development track.csv"
+            course_requirements = "Tracks\web development track.csv"
             populateCourseArray(course_requirements)
         #Enterprise
         case "Enterprise":
-            course_requirements = "version 0.2\Tracks\Enterprise Computing Track.csv"
+            course_requirements = "Tracks\Enterprise Computing Track.csv"
             populateCourseArray(course_requirements)
         case "Cybersecurity":
-            course_requirements = "version 0.2\Tracks\Cybersecurity Track.csv"
+            course_requirements = "Tracks\Cybersecurity Track.csv"
             populateCourseArray(course_requirements)
 
 

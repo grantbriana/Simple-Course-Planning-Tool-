@@ -1,7 +1,10 @@
 #Generates Schedule. Imports BFS graph
 import DAG2 as dag
-import GUI as gui
+import GUI2 as gui
+
 desiredHours = int(gui.app.DesiredHours.get())
+print(desiredHours)
+
 #Checks if class in temporary array to avoid unmet prerequisite error
 def notListed(course,array):
   flag = False
@@ -87,10 +90,10 @@ schedule()
 
 k = 1
 def season():
-    if k in (1, 4, 7):
+    if k == 1 or (k % 3 == 1):
         return "Spring"
-    elif k in (2, 5, 8):
+    elif k == 2 or (k % 3 == 2):
         return  "Summer"
-    elif k in (3, 6, 9):
+    elif k == 3 or (k % 3 == 0):
         return  "Fall"
 
