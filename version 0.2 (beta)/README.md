@@ -26,3 +26,13 @@ Academic advising takes a long time for both students and faculty, especially wh
 
 
 
+HOW TO RUN APP:
+
+- We recommend creating a virtual environment to avoid conflicting versions of dependencies on your system
+    - python -m venv venv 
+    - venv\Scripts\activate  
+
+- Install dependencies from requirements.txt
+    - pip install -r requirements.txt  
+
+- Run main.py path from command line or ide
