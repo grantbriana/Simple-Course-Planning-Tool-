@@ -24,16 +24,18 @@ def schedule():
     tempArray = []
     #semester hours counter.
     j = 0
-    #Check if 15 array does not exceed 15 credit hours
-    if j < desiredHours:
-      #Iterate through each class in BFS (level-traversal)path
-      for course in dag.objpath:
-        #Check if  is available for season
+
+
+    #Iterate through each class in BFS (level-traversal)path
+    for course in dag.objpath:
+      # Check if 15 array does not exceed 15 credit hours
+      if j < desiredHours:
+      #Check if  is available for season
         if course.fall:
           #check if class has been taken and not already in semester array
           if course.taken == False:
-            if course not in tempArray: 
-              #check if course has prereqs or course has met all prereqs 
+            if course not in tempArray:
+              #check if course has prereqs or course has met all prereqs
               if dag.prereqCheck(course.name):
                 #check if course has a prerequisite in semester array already
                 if notListed(course.name,tempArray) == False:

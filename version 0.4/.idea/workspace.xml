@@ -5,46 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a12091a-e822-4be0-9d23-b1ceeb517e5f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/version 0.2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/version 0.2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAG.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAG2.0.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI2.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCPToolUi/SCPToolUi.ui" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCPToolUi2.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tracks/Cybersecurity Track.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Tracks/Cybersecurity Track.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tracks/Education Track.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Tracks/Education Track.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tracks/Enterprise Computing Track.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Tracks/Enterprise Computing Track.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tracks/Games Programming Track.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Tracks/Games Programming Track.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demofile.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileReader.py" beforeDir="false" afterPath="$PROJECT_DIR$/fileReader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduleCreateDag.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduleGenerator.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/scheduleGenerator2.py" beforeDir="false" afterPath="$PROJECT_DIR$/scheduleGenerator2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/version 0.2/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/version 0.2/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/version 0.2/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/version 0.2/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/version 0.2/.idea/version 0.2.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/version 0.2/DAG.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/version 0.2/DAG2.0.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/version 0.2/GUI.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/version 0.2/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/version 0.2/Sample Input1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/version 0.2/Sample Input3.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/version 0.2/TestDAG1.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/version 0.2/TestDAG2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/version 0.2/Tracks/Cybersecurity Track.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/version 0.2/Tracks/Education Track.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/version 0.2/Tracks/Enterprise Computing Track.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/version 0.2/Tracks/Games Programming Track.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/version 0.2/Tracks/Software Systems Track.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/version 0.2/fileReader.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/version 0.2/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/version 0.2/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/version 0.2/scheduleCreateDag.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/version 0.2/scheduleGenerator.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
