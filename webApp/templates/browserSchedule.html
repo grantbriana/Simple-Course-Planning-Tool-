@@ -1,0 +1,66 @@
+
+<!-- CSS Template Derived from - https://codepen.io/georgedoescode-->
+<html>
+
+<head>
+  <script src = "script.js"></script>
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+</head>
+
+<body>
+  <title>Simple Course Planning Tool A.I. Chat Assistant</title>
+
+
+  <!-- Overlay -->
+  <div class="overlay">
+    <!-- Overlay inner wrapper -->
+      <!-- Title -->
+      <h1 class="overlay__title">
+        Simple Course Planning Tool
+      </h1>
+
+      <form action = "/success" method = "post" enctype="multipart/form-data">  
+        <label for="track">1. Select Track from dropdown menu</label>
+        <br>
+        <select name="track" id="track">
+          <option value="Software Systems">Software Systems</option>
+          <option value="Cybersecurity">Cybersecurity</option>
+          <option value="Game Development">Game Development</option>
+          <option value="Education">Education</option>
+        </select>
+
+        <br><br>
+        <label for="file">2. Select file</label>
+        <br>
+        <input type="file" name = "file">
+        <br><br><br>
+
+        <!--Track dropdown, Open degreeWorks file input, submit button -->
+        <input type = "submit" value = "Upload">
+      </form>
+      <p>{{ variable }}</p>
+      </div>
+  </div>
+
+
+  <footer>
+    <p>Created by: <br> Briana Grant</p>
+  </footer>
+
+  <script>
+      window.watsonAssistantChatOptions = {
+      integrationID: "91458ca2-6e85-43b5-9a63-016093f873d6", // The ID of this integration.
+      region: "us-east", // The region your integration is hosted in.
+      serviceInstanceID: "7100bdb5-2ea0-4626-9a32-e44f8fabf720", // The ID of your service instance.
+      onLoad: function(instance) { instance.render(); }
+    };
+      setTimeout(function(){
+        const t=document.createElement('script');
+        t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+        document.head.appendChild(t);
+      });
+  </script>
+
+</body>
+</html>

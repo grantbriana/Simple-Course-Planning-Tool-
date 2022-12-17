@@ -1,0 +1,7 @@
+{x} Links work properly
+{x} Upload user input file to server
+{x} Access input file via fileReader
+{x} Refactor scheduleGenerator
+{x} Refactor fileReader
+{x} Refactor DAG
+{x} Connect to app
