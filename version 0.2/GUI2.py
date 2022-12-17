@@ -1,13 +1,18 @@
 import csv
 import pathlib
+import tkinter.messagebox
+
 import pygubu
 import tkinter as tk
+import webbrowser
 import os
-from tkinter import filedialog as fd, ttk
-
+from tkinter import filedialog as fd
 PROJECT_PATH = pathlib.Path(__file__).parent
-PROJECT_UI =  "version 0.2/SCPToolUi/SCPToolUi.ui"
 
+PROJECT_UI =  "SCPToolUi/SCPToolUi2.ui"
+pathLine = ""
+desiredHours = 12
+degreeWorks = ""
 
 class NewprojectApp:
 
@@ -19,20 +24,75 @@ class NewprojectApp:
         # Main widget
         self.mainwindow = builder.get_object("frame1", master)
         builder.connect_callbacks(self)
-        current_var = tk.StringVar()
-        self.trackCombo = builder.get_object('TrackCombo')
-        self.nameInput = builder.get_object('nameInput')
+        self.trackCombo = tk.combobox = builder.get_object('TrackCombo')
+        self.nameInput = tk.entry = builder.get_object('nameInput')
+        self.nameInput.insert(0,'Enter Your Name')
         self.ClassList = builder.get_object('CourseList')
         self.DesiredHours = builder.get_object('entry2')
-        options = ("Software Systems", "Game Development", "Network Security", "Education", "Web Development", "Enterprise")
-        self.trackCombo['values'] = options
+        self.DesiredHours.insert(0, "12")
+        options = ("Software Systems", "Game Development", "Cybersecurity", "Education", "Enterprise")
+        self.trackCombo.config(values=options)
         self.trackCombo['state'] = 'readonly'
-        self.nameInput.insert(0,'Enter Name')
-        self.DesiredHours.insert(0,'12')
+        self.trackCombo.current(0)
+
         self.DegreeWork = tk.StringVar()
+
+    def populateCourseArray(self, path):
+        # relevant spreadsheet opened
+        i = 0
+        with open(path, 'r') as csvfile:
+            datareader = csv.reader(csvfile)
+            # row[6] (prerequisites) iterated and added to prereq. list
+            self.ClassList.delete(0,tk.END)
+            for row in datareader:
+                #prereq = row[7].split(",")
+                self.ClassList.insert(i, row[1])
+                i = i + 1
+
+
+    def trackCallBack(self, drop):
+        match drop:
+            # software systems
+            case "Software Systems":
+                course_requirements = "Tracks\Software Systems Track.csv"
+                self.populateCourseArray(course_requirements)
+            # education
+            case "Education":
+                course_requirements = "Tracks\Education Track.csv"
+                self.populateCourseArray(course_requirements)
+            # cybersecurity
+            case "Network Security":
+                course_requirements = "Tracks\Cybersecurity Track.csv"
+                self.populateCourseArray(course_requirements)
+            # games programming
+            case "Game Development":
+                course_requirements = "Tracks\Games Programming Track.csv"
+                self.populateCourseArray(course_requirements)
+            # web development
+            case "Web Development":
+                course_requirements = "Tracks\web development track.csv"
+                self.populateCourseArray(course_requirements)
+            # Enterprise
+            case "Enterprise":
+                course_requirements = "Tracks\Enterprise Computing Track.csv"
+                self.populateCourseArray(course_requirements)
+            case "Cybersecurity":
+                course_requirements = "Tracks\Cybersecurity Track.csv"
+                self.populateCourseArray(course_requirements)
+
+    def callback(self, event=None):
+        filename = 'file://'+os.getcwd()+'/'+'webChat.html'
+        print(filename)
+        webbrowser.open_new_tab(filename)
+
+    def Track(self):
+        return self.trackCombo.get()
+
 
     def run(self):
         self.mainwindow.mainloop()
+
+
 
     def degreeWorksPath(self):
         filePath = tk.StringVar()
@@ -40,78 +100,30 @@ class NewprojectApp:
         filePath.set(filename)
         self.DegreeWork.set(filename)
     def DegreeWork(self):
-        return self.DegreeWork()
-
-
-    def classAdd(self, data):
-        self.ClassList.insert(tk.END,data)
-
-    def populateCourseArray(self, path):
-        # relevant spreadsheet opened
-        if os.path.isfile(path):
-            with open(path, 'r') as csvfile:
-                datareader = csv.reader(csvfile)
-                # row[6] (prerequisites) iterated and added to prereq. list
-                app.ClassList.delete(0, tk.END)
-                for row in datareader:
-                    prereq = row[7].split(",")
-                    self.classAdd(row[1])
-        else:
-            app.ClassList.delete(0,tk.END)
-
-    def trackCallBack(self, drop):
-        match drop:
-            # software systems
-            case "Software Systems":
-                course_requirements = "C:\SCP_Tool\Software Systems Track.csv"
-                self.populateCourseArray(course_requirements)
-            # education
-            case "Education":
-                course_requirements = "version 0.2\Tracks\Education Track.csv"
-                self.populateCourseArray(course_requirements)
-            # cybersecurity
-            case "Network Security":
-                course_requirements = "version 0.2\Tracks\Cybersecurity Track.csv"
-                self.populateCourseArray(course_requirements)
-            # games programming
-            case "Game Development":
-                course_requirements = "version 0.2\Tracks\Games Programming Track.csv"
-                self.populateCourseArray(course_requirements)
-            # web development
-            case "Web Development":
-                course_requirements = "version 0.2\web development track.csv"
-                self.populateCourseArray(course_requirements)
-            # Enterprise
-            case "Enterprise":
-                course_requirements = "version 0.2\Tracks\Enterprise Computing Track.csv"
-                self.populateCourseArray(course_requirements)
-            case "Cybersecurity":
-                course_requirements = "version 0.2\Tracks\Cybersecurity Track.csv"
-                self.populateCourseArray(course_requirements)
-
-    def TrackComboSelected(self, event=None):
-        self.trackCallBack(self.trackCombo.get())
-        print(self.trackCombo.get())
+        return self.DegreeWork
 
     def ChatBotCall(self):
         pass
 
     def Submit(self):
-        name = self.nameInput.get()
-        path = self.trackCombo.get()
-        hours = self.DesiredHours.get()
-        print(path)
-        self.mainwindow.quit()
-        self.mainwindow.destroy()
+        path= self.trackCombo.get()
+        degreeWorks = self.DegreeWork.get()
+        if not self.DegreeWork.get():
+            res = tkinter.messagebox.askquestion(title='Degree Works File Not Found', message='You do not have a Degree Works selected. Do you wish to continue without a Degree Works file?')
+            if res == 'yes':
+                self.mainwindow.quit()
+        else:
+            self.mainwindow.quit()
 
 
 
 
-if __name__ == "__main__":
-    root = tk.Tk()
-    app = NewprojectApp(root)
-    app.trackCombo.current(0)
-    app.trackCombo.bind('<<ComboboxSelected>>',app.TrackComboSelected())
-    app.trackCombo.bind('<<ComboboxSelected>>',lambda event: app.TrackComboSelected())
-    #app.TrackComboSelected()
-    app.run()
+
+
+root = tk.Tk()
+app = NewprojectApp(root)
+app.trackCombo.bind("<<ComboboxSelected>>", app.trackCallBack(app.trackCombo.get()))
+app.trackCombo.bind("<<ComboboxSelected>>", lambda event:app.trackCallBack(app.trackCombo.get()))
+app.run()
+app.filePath = tk.StringVar
+#ilePath.set(app.DegreeWork().get)

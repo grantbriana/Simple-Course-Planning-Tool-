@@ -1,12 +1,13 @@
 # import student interface module & needed packages
 import csv
 import PyPDF2
-import GUI as gui
+import GUI2 as gui
 
 courses = []
 notTaken = []
 
-drop = gui.pathMenu.get()
+drop = gui.app.trackCombo.get()
+print(drop)
 #each class a literal class with attributes course, descript., etc
 
 
@@ -64,30 +65,30 @@ def getUserTrack(drop):
     match drop:
         #software systems
         case "Software Systems":
-            course_requirements = "version 0.2\Tracks\Software Systems Track.csv"
+            course_requirements = "Tracks\Software Systems Track.csv"
             populateCourseArray(course_requirements)
         #education
         case "Education":
-            course_requirements = "version 0.2\Tracks\Education Track.csv"
+            course_requirements = "Tracks\Education Track.csv"
             populateCourseArray(course_requirements)
         #cybersecurity
         case "Network Security":
-            course_requirements = "version 0.2\Tracks\Cybersecurity Track.csv"
+            course_requirements = "Tracks\Cybersecurity Track.csv"
             populateCourseArray(course_requirements)
         #games programming
         case "Game Development":
-            course_requirements = "version 0.2\Tracks\Games Programming Track.csv"
+            course_requirements = "Tracks\Games Programming Track.csv"
             populateCourseArray(course_requirements)
         #web development
         case "Web Development":
-            course_requirements = "version 0.2\web development track.csv"
+            course_requirements = "Tracks\web development track.csv"
             populateCourseArray(course_requirements)
         #Enterprise
         case "Enterprise":
-            course_requirements = "version 0.2\Tracks\Enterprise Computing Track.csv"
+            course_requirements = "Tracks\Enterprise Computing Track.csv"
             populateCourseArray(course_requirements)
         case "Cybersecurity":
-            course_requirements = "version 0.2\Tracks\Cybersecurity Track.csv"
+            course_requirements = "Tracks\Cybersecurity Track.csv"
             populateCourseArray(course_requirements)
 
 
@@ -109,25 +110,25 @@ def populateCourseArray(path):
 #Keep track of taken classes & needed classes
 def getNeededClasses():
     #from gui, retrieve user selected of DegreeWorks File Path
-    degreeWorksPath = gui.filePath.get()
-    pdfFileObj = open(degreeWorksPath,'rb')
-    pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
-
-    numPages = PyPDF2.PdfFileReader(pdfFileObj).numPages
-    #if course name discovered in user DegreeWorks file, mark as NOT taken
-    for i in range(numPages):
-        pageObj = pdfReader.getPage(i)
-        text=(pageObj.extractText())
-        #parse user's file
-        for course in courses:
-            if course.name+"*" in text or course.name in text:
-                #if course is found in Text, add to untaken list
-                notTaken.append(course.name)
-
-    #if course name NOT discovered in user untaken list, mark as taken
-    for c in courses:
-        if c.name not in notTaken:
-            c.taken = True
+    degreeWorksPath = gui.app.DegreeWork.get()
+    if degreeWorksPath:
+        pdfFileObj = open(degreeWorksPath,'rb')
+        pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
+        numPages = PyPDF2.PdfFileReader(pdfFileObj).numPages
+        #if course name discovered in user DegreeWorks file, mark as NOT taken
+        for i in range(numPages):
+            pageObj = pdfReader.getPage(i)
+            text=(pageObj.extractText())
+            #parse user's file
+            for course in courses:
+                if course.name+"*" in text or course.name in text:
+                    #if course is found in Text, add to untaken list
+                    notTaken.append(course.name)
+        print("\n")
+        #if course name NOT discovered in user untaken list, mark as taken
+        for c in courses:
+            if c.name not in notTaken:
+                c.taken = True
 
 getUserTrack(drop)
 getNeededClasses()
